@@ -79,6 +79,12 @@ function EditPolicy({ history, match }: Props) {
    * @returns {object} - new state object for "inputs" key
    */
   const formatPolicyDataForForm = useCallback((policyData: PolicyData, definitionsData: PolicyDefinitionTemplate[]) => {
+
+    console.log("policyData")
+    console.log(policyData)
+    console.log("definitionsData")
+    console.log(definitionsData)
+    
     const newInputsState: ObjectOfStringKeyObject = {};
     policyData.definitions.forEach((definition: any) => {
       const policyDefinition: PolicyDefinitionTemplate =
@@ -91,6 +97,8 @@ function EditPolicy({ history, match }: Props) {
         definitionRows[uuid.v4()] = rule;
       });
     });
+    console.log("inputs")
+    console.log(newInputsState)
     return newInputsState;
   }, []);
 

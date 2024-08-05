@@ -12,6 +12,12 @@ type Props = {
 };
 
 export default function CreateEditPolicyForm({ definitions, form }: Props) {
+
+  console.log("definitions")
+  console.log(definitions)
+  console.log("form")
+  console.log(form)
+
   const sortedDefinitions = React.useMemo(() => sortBy(definitions, "order"), [definitions]);
   return (
     <div className={styles.container}>
